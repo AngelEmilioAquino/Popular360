@@ -1,8 +1,14 @@
 from fastapi import APIRouter
 from app.routers.utils.client import get_exchange_rate
+from fastapi import HTTPException
 
-router = APIRouter(prefix="/cambio", tags=["Tasas de Cambio"])
+router = APIRouter(prefix="/changes", tags=["Changes"])
 
-@router.get("/")
+@router.get("/exchange")
 async def get_change():
-    return await get_exchange_rate()
+    try:
+        data = await get_exchange_rate()
+        return {"exchange_rate": data}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
