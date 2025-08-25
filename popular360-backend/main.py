@@ -16,15 +16,15 @@ app = FastAPI(title="Popular360 API 🚀", version="1.0.0", lifespan=lifespan)
 # Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173/"],
+    allow_origins=["http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Routers
-app.include_router(rates.router)
-app.include_router(change.router)
+app.include_router(rates.rates_router)
+app.include_router(change.changes_router)
 
 # Endpoint raíz
 @app.get("/")
