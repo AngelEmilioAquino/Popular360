@@ -15,19 +15,15 @@
     </section>
 
     <section class="py-16 px-6 max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center">Tipo de Cambio</h2>
-      <div v-if="interest" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div
-          v-for="m in interest.monedas.moneda"
-          :key="m.descripcion"
-          class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition"
-        >
-          <h3 class="text-xl font-bold">{{ m.descripcion }}</h3>
-          <p class="text-gray-700">Compra: <span class="font-semibold">{{ m.compra }}</span></p>
-          <p class="text-gray-700">Venta: <span class="font-semibold">{{ m.venta }}</span></p>
-        </div>
-      </div>
-      <p v-else class="text-center text-gray-500">Cargando tipo de cambio...</p>
+       <h2 class="text-3xl font-bold mb-8 text-center">Tipo de Cambio</h2> 
+       <div v-if="interest" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ml-0 md:ml-40"> 
+        <div v-for="m in interest.monedas.moneda" :key="m.descripcion" class="p-6 bg-white rounded-lg shadow transition" > 
+          <h3 class="text-xl font-bold">{{ m.descripcion }}</h3> 
+          <p class="text-gray-700">Compra: <span class="font-semibold">{{ m.compra }}</span></p> 
+          <p class="text-gray-700">Venta: <span class="font-semibold">{{ m.venta }}</span></p> 
+        </div> 
+      </div> 
+      <p v-else class="text-center text-gray-500">Cargando tipo de cambio...</p> 
     </section>
 
     <!-- Sección tasas de interés -->
@@ -37,7 +33,7 @@
         <div
           v-for="(tasa, producto) in exchange.tasasint.tasaprestamos"
           :key="producto"
-          class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition"
+          class="p-6 bg-white rounded-lg shadow transition"
         >
           <h3 class="text-lg font-bold">{{ producto }}</h3>
           <p class="text-gray-700">Tasa: <span class="font-semibold">{{ tasa }}%</span></p>
@@ -50,21 +46,21 @@
     <section class="py-16 px-6 max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Servicios Destacados</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center">
+        <div class="bg-white p-6 rounded-lg shadow-md transition flex flex-col items-center">
             <div class="rounded-full w-15 h-15 bg-gray-200 flex items-center justify-center">
               <CreditCard class="h-40 w-8"/>
             </div>
           <h3 class="text-xl font-bold mb-2 mt-4">Préstamos</h3>
           <p class="text-gray-700 text-center">Consulta las tasas más competitivas para tus préstamos personales y empresariales.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center">
+        <div class="bg-white p-6 rounded-lg shadow-md transition flex flex-col items-center">
             <div class="rounded-full w-15 h-15 bg-gray-200 flex items-center justify-center">
               <PiggyBank class="h-40 w-8"/>
             </div>
           <h3 class="text-xl font-bold mb-2 mt-4">Ahorros</h3>
           <p class="text-gray-700 text-center">Cuentas de ahorro con interés atractivo y seguridad total.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center">
+        <div class="bg-white p-6 rounded-lg shadow-md transition flex flex-col items-center">
             <div class="rounded-full w-15 h-15 bg-gray-200 flex items-center justify-center">
               <RefreshCw class="h-40 w-8"/>
             </div>
